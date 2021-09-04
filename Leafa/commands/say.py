@@ -7,9 +7,19 @@ class Say(commands.Cog):
         self.bot = bot
     
     @commands.command(name = 'say', help = 'Faz a Leafa dizer algo. Argumentos: Mensagem. (Somente para Adms)')
-    async def say(self, rtx, *message):
-        response = ' '.join(message)
-        await rtx.channel.send(response)
+    async def say(self, ctx, *message):
+        '''response = ' '.join(message)
+        await ctx.channel.send(response)'''
+        await ctx.channel.send('Este comando está desabilitado no momento! Volte mais tarde hehehe.')
+    
+    @commands.command()
+    async def cap(self, ctx, *message):
+        message = ' '.join(message)
+        response =  f'''{message}
+O **Capítulo 11** de **Who Invited You?** corram lá!
+https://tsukimangas.com/leitor/5141/252636/who-invited-you/11#1
+        '''
+        await ctx.channel.send(response)
 
 
 def setup(bot):

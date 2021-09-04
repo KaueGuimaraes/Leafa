@@ -3,6 +3,17 @@ from discord.ext import commands
 
 from discord.ext.commands.errors import MissingRequiredArgument, CommandNotFound, CommandInvokeError
 
+from random import randint
+
+
+auto_delete_words = ['fdp', 'filho da puta', 'boquete', 'puta que paril', 'pqp',
+                    'punheta', 'xoxota', 'siririca', 'bicha']
+auto_delete_phrases = ['Por favor. [name] não ofenda os demais usuários!',
+                        'Manere no palavreado [name]!',
+                        'Não xinge [name]! Não seja estúpido!',
+                        '[name] cuidado com o que diz...',
+                        'Não seja ofensivo [name]!']
+
 
 class Manager(commands.Cog):
     '''Mnage the Bot'''
@@ -19,8 +30,8 @@ class Manager(commands.Cog):
         if message.author == self.bot.user:
             return
         
-        if 'palavrão' in message.content:
-            await message.channel.send(f'Por favor, {name} não ofenda os demais usuários!')
+        if message.content in auto_delete_words:
+            await message.channel.send(auto_delete_phrases[0].replace('[name]', f'**{name}**'))
 
             await message.delete()
     
