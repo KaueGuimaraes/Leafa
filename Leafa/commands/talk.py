@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 
 
-class Talks(commands.Cog):
+class Talk(commands.Cog):
     '''Talk with user'''
     def __init__(self, bot):
         self.bot = bot
@@ -28,4 +28,4 @@ class Talks(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Talks(bot))
+    bot.add_cog(Talk(bot))

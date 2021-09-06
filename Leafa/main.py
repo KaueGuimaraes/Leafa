@@ -22,6 +22,7 @@ load_cogs(bot)'''
 bot.load_extension('manager')
 
 bot.load_extension('commands.cryptos')
+bot.load_extension('commands.fun')
 bot.load_extension('commands.images')
 bot.load_extension('commands.reactions')
 bot.load_extension('commands.say')
