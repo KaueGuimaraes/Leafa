@@ -13,6 +13,21 @@ class Smarts(commands.Cog):
         print(expression)
 
         await ctx.send('A resposta é: ' + str(response))
+    
+    @commands.command(name = 'noteimg', help = 'Comando adicional para facilitar imgnotes na Mudae. Argumentos: Páginas.')
+    async def note_img(self, ctx, pages = 1):
+        author = ctx.author.name
+
+        if pages < 1:
+            await ctx.send(f'Ei! **{author}** informe um número maior!')
+        elif pages > 50:
+            await ctx.send(f'Ei! **{author}** informe um número menor!')
+        else:
+            response = ' $ '
+            for c in range(1, pages + 1):
+                response = response + f'{c} $ '
+            
+            await ctx.send(response)
 
 
 def setup(bot):

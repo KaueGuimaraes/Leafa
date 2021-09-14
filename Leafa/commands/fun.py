@@ -11,14 +11,8 @@ class Fun(commands.Cog):
     async def hug(self, ctx, user):
         url_image = 'https://tenor.com/view/abraço-hug-anime-gif-14903934'
 
-        embed_image = discord.Embed(
-            description = f'{ctx.author.name} abraçou {user}',
-            color = 0xFFFF00
-        )
-
-        embed_image.set_image(url = url_image)
-
-        await ctx.send(embed = embed_image)
+        await ctx.send(f'**{ctx.author.name}** abraçou **{user}**')
+        await ctx.send(url_image)
 
 
 def setup(bot):
